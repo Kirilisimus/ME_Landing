@@ -173,7 +173,7 @@
             contentItems[currentIndex].classList.add('active');
         }
         
-        intervalId = setInterval(switchMenuItem, 5000);
+        intervalId = setInterval(switchMenuItem, 2000);
 
         menuItems.forEach((menuItem, index) => {
             menuItem.addEventListener('click', () => {

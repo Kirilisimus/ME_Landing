@@ -1177,6 +1177,7 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
     mask-composite: exclude;
     user-select: none;
     z-index: -1;
+    
   }
 
   .card--light.card::before {
@@ -2463,7 +2464,8 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 .menu div{
-  display: block;
+  display: flex;
+  z-index: 3;
 }
 
 .menu div.active {
@@ -2486,8 +2488,9 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 
 .content.active{
   display: flex;
+  z-index: 3;
 }
 
-.menu{
-  z-index: 999;
+.menuButton{
+  z-index: -3;
 }
