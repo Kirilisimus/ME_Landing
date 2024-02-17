@@ -132,10 +132,10 @@
             evt.preventDefault();
 
             requestAnimationFrame(() => {
-            const xRotation = -30 * ((evt.layerY - height / 2) / height);
-            const yRotation = 20 * ((evt.layerX - width / 2) / width);
+            const xRotation = -7 * ((evt.layerY - height / 2) / height);
+            const yRotation = 5 * ((evt.layerX - width / 2) / width);
 
-            card.style.transform = `perspective(1000px) scale(1.05) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+            card.style.transform = `perspective(1000px) scale(1.00) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
             });
         };
 
@@ -153,9 +153,35 @@
         
         card.addEventListener("click", (evt) => {
             evt.preventDefault();
-            card.style.animation = "spin 1s ease-in-out";
+            card.style.animation = "spin 2s ease-in-out";
             setTimeout(() => {      
             card.style.animation = '';
             }, 1000);
         });
+        });
+
+        const menuItems = document.querySelectorAll('.menu div');
+        const contentItems = document.querySelectorAll('.content');
+        let currentIndex = 0;
+        let intervalId;
+
+        function switchMenuItem() {
+            menuItems[currentIndex].classList.remove('active');
+            contentItems[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % menuItems.length;
+            menuItems[currentIndex].classList.add('active');
+            contentItems[currentIndex].classList.add('active');
+        }
+        
+        intervalId = setInterval(switchMenuItem, 5000);
+
+        menuItems.forEach((menuItem, index) => {
+            menuItem.addEventListener('click', () => {
+                clearInterval(intervalId); // Очищаем интервал при клике на пункт меню
+                currentIndex = index; // Устанавливаем текущий индекс в соответствии с кликнутым пунктом меню
+                menuItems.forEach(item => item.classList.remove('active'));
+                contentItems.forEach(item => item.classList.remove('active'));
+                menuItem.classList.add('active');
+                contentItems[index].classList.add('active');
+            });
         });
