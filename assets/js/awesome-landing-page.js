@@ -151,14 +151,14 @@
             card.removeEventListener("mousemove", mouseMoveHandler);
         });
         
-        card.addEventListener("click", (evt) => {
-            evt.preventDefault();
-            card.style.animation = "spin 2s ease-in-out";
-            setTimeout(() => {      
-            card.style.animation = '';
-            }, 1000);
-        });
-        });
+        // card.addEventListener("click", (evt) => {
+        //     evt.preventDefault();
+        //     card.style.animation = "spin 2s ease-in-out";
+        //     setTimeout(() => {      
+        //     card.style.animation = '';
+        //     }, 1000);
+        // });
+         });
 
         const menuItems = document.querySelectorAll('.menu div');
         const contentItems = document.querySelectorAll('.content');
