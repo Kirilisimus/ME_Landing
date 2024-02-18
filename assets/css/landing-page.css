@@ -1064,7 +1064,7 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 .container {
-  margin-top: 35px;
+  margin-top: 80px;
   display: flex;
   width: 100%;
   height: 100%;
@@ -1486,9 +1486,12 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
   color: #b4b4b4;
   font-family: Helvetica;
   margin-bottom: 20px;
-  font-size: 79px;
+  font-size: 50px;
   position: relative;
   line-height: 1;
+  width: 100%;
+  height: fit-content;
+  margin: 0;
 }
 
 .landing-page .navbar-top {
@@ -2489,7 +2492,6 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
   flex-wrap: wrap;
   color: black;
   width: 100%;
-
 }
 
 .menuButton{
@@ -2497,31 +2499,38 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 .contentWrap{
-  display: flex;
-  align-items: center;
   width: 100%;
   z-index: -1;
   height: 90%;
   background-color: whitesmoke;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
 }
-
-
 
 .descriptionWrap {
   display: flex;
   min-width: 100%;
+  height: fit-content;
+  flex-direction: column;
+}
+
+.descriptionCustomer{
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .contactsWrap{
   display: flex;
   min-width: 100%;
+  height: fit-content;
   flex-direction: column;
 }
 
 .socialWrap{
   display: flex;
   min-width: 100%;
+  height: fit-content;
   flex-direction: column;
 }
 
@@ -2541,4 +2550,18 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
   width: 100%;
 }
 
+#qrImage{
+  width: 200px;
+  height: 200px;
+}
 
+.text-center{
+  width: 100%;
+}
+
+.secondSection{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
