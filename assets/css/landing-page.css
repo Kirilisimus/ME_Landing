@@ -2481,16 +2481,64 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 
 .content{
   display: none;
-  background-color: whitesmoke;
-  color: black;
-  border-radius: 50px;
 }
 
 .content.active{
   display: flex;
   z-index: 3;
+  flex-wrap: wrap;
+  color: black;
+  width: 100%;
+
 }
 
 .menuButton{
   z-index: -3;
 }
+
+.contentWrap{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: -1;
+  height: 90%;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+
+
+
+.descriptionWrap {
+  display: flex;
+  min-width: 100%;
+}
+
+.contactsWrap{
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+}
+
+.socialWrap{
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+}
+
+.qrWrap{
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+}
+
+.shareWrap{
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+}
+
+.description{
+  width: 100%;
+}
+
+
