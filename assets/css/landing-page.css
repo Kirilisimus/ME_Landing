@@ -1115,8 +1115,8 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 .card {
-  width: 100%;
-  height: 100%;
+  min-width: 550px;
+  height: 600px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -2494,6 +2494,18 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
   width: 100%;
 }
 
+.content.active#qr-content{
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.content.active#share-content{
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .menuButton{
   z-index: -3;
 }
@@ -2516,7 +2528,7 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 .descriptionCustomer{
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
 }
 
@@ -2551,8 +2563,8 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
 }
 
 #qrImage{
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
 }
 
 .text-center{
@@ -2565,3 +2577,4 @@ box-shadow: -2px 29px 114px -28px rgba(144, 0, 255, 0.623);
   align-items: center;
   justify-content: center;
 }
+
