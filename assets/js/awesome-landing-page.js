@@ -208,4 +208,18 @@
             window.open(telegramUrl, '_blank');
         }
 
-        
+        function openEmailClientOrForm() {
+            // Проверяем, находится ли пользователь на мобильном устройстве
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            // Адрес электронной почты
+            var emailAddress = 'адрес_почты@example.com';
+            
+            if (isMobile) {
+                // Открываем почтовый клиент на мобильных устройствах
+                window.location.href = 'mailto:' + emailAddress;
+            } else {
+                // Открываем форму отправки почты на ПК
+                window.open('https://example.com/contact-form', '_blank');
+            }
+        }
