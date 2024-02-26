@@ -113,52 +113,52 @@
         }
 
         
-        const cards = document.querySelectorAll(".card");
-        // const onDocumentMouseMoveHandler = (evt) => {
-        //   evt.preventDefault();
+        // const cards = document.querySelectorAll(".card");
+        // // const onDocumentMouseMoveHandler = (evt) => {
+        // //   evt.preventDefault();
 
-        //   requestAnimationFrame(() => {
-        //     if (!evt.target.closest('.card')) {
-        //       card.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)';
-        //     }
-        //   });
-        // };
-        // document.addEventListener('mousemove', onDocumentMouseMoveHandler)
-        cards.forEach((card) => {
-        const height = card.clientHeight;
-        const width = card.clientWidth;
+        // //   requestAnimationFrame(() => {
+        // //     if (!evt.target.closest('.card')) {
+        // //       card.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)';
+        // //     }
+        // //   });
+        // // };
+        // // document.addEventListener('mousemove', onDocumentMouseMoveHandler)
+        // cards.forEach((card) => {
+        // const height = card.clientHeight;
+        // const width = card.clientWidth;
 
-        const mouseMoveHandler = (evt) => {
-            evt.preventDefault();
+        // // const mouseMoveHandler = (evt) => {
+        // //     evt.preventDefault();
 
-            requestAnimationFrame(() => {
-            const xRotation = -7 * ((evt.layerY - height / 2) / height);
-            const yRotation = 5 * ((evt.layerX - width / 2) / width);
+        // //     requestAnimationFrame(() => {
+        // //     const xRotation = -7 * ((evt.layerY - height / 2) / height);
+        // //     const yRotation = 5 * ((evt.layerX - width / 2) / width);
 
-            card.style.transform = `perspective(1000px) scale(1.00) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-            });
-        };
+        // //     card.style.transform = `perspective(1000px) scale(1.00) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+        // //     });
+        // // };
 
 
-        card.addEventListener("mouseenter", (evt) => {
-            evt.preventDefault();
-            card.addEventListener("mousemove", mouseMoveHandler);
-        });
+        // // card.addEventListener("mouseenter", (evt) => {
+        // //     evt.preventDefault();
+        // //     card.addEventListener("mousemove", mouseMoveHandler);
+        // // });
 
-        card.addEventListener("mouseout", (evt) => {
-            evt.preventDefault();
-            card.style.transform = "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
-            card.removeEventListener("mousemove", mouseMoveHandler);
-        });
+        // // card.addEventListener("mouseout", (evt) => {
+        // //     evt.preventDefault();
+        // //     card.style.transform = "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
+        // //     card.removeEventListener("mousemove", mouseMoveHandler);
+        // // });
         
-        // card.addEventListener("click", (evt) => {
-        //     evt.preventDefault();
-        //     card.style.animation = "spin 2s ease-in-out";
-        //     setTimeout(() => {      
-        //     card.style.animation = '';
-        //     }, 1000);
-        // });
-         });
+        // // card.addEventListener("click", (evt) => {
+        // //     evt.preventDefault();
+        // //     card.style.animation = "spin 2s ease-in-out";
+        // //     setTimeout(() => {      
+        // //     card.style.animation = '';
+        // //     }, 1000);
+        // // });
+        //  });
 
         const menuItems = document.querySelectorAll('.menu div');
         const contentItems = document.querySelectorAll('.content');
@@ -184,4 +184,21 @@
                 menuItem.classList.add('active');
                 contentItems[index].classList.add('active');
             });
+        });
+
+        const card = document.querySelector('.card');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const xPercent = x / rect.width;
+          const yPercent = y / rect.height;
+          card.style.setProperty('--tx', `${xPercent * 2 - 1}`);
+          card.style.setProperty('--ty', `${yPercent * 2 - 1}`);
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--tx', '0');
+          card.style.setProperty('--ty', '0');
         });
