@@ -202,3 +202,8 @@
           card.style.setProperty('--tx', '0');
           card.style.setProperty('--ty', '0');
         });
+
+        function shareOnTelegram(text) {
+            var telegramUrl = 'https://t.me/share/url?text=' + encodeURIComponent(text);
+            window.open(telegramUrl, '_blank');
+        }
