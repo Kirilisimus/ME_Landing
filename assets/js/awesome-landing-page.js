@@ -207,3 +207,8 @@
             var telegramUrl = 'https://t.me/share/url?text=' + encodeURIComponent(text);
             window.open(telegramUrl, '_blank');
         }
+
+        function shareOnGmail(subject, body) {
+            var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.open(gmailUrl, '_blank');
+        }
