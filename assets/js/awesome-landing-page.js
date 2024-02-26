@@ -210,16 +210,6 @@
 
         function shareOnGmail(subject, body) {
             var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-            var userAgent = navigator.userAgent.toLowerCase();
-    
-            // Проверяем, является ли устройство мобильным
-            var isMobile = /iphone|ipad|ipod|android|blackberry|iemobile|opera mini/i.test(userAgent);
-    
-            // Если устройство мобильное, открываем ссылку в текущем окне
-            if (isMobile) {
-                window.location.href = gmailUrl;
-            } else {
-                // Если устройство не мобильное, открываем ссылку в новом окне
-                window.open(gmailUrl, '_blank');
-            }
+            var win = window.open(gmailUrl, '_blank');
+            win.focus();
         }
