@@ -208,8 +208,14 @@
             window.open(telegramUrl, '_blank');
         }
 
-        function shareOnGmail(subject, body) {
+        document.getElementById("gmailLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            shareOnGmail();
+        });
+        
+        function shareOnGmail() {
+            var subject = "YOUR_SUBJECT_HERE";
+            var body = "YOUR_BODY_HERE";
             var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-            var win = window.open(gmailUrl, '_blank');
-            win.focus();
+            window.open(gmailUrl, '_blank');
         }
