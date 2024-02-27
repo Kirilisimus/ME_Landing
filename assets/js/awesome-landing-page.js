@@ -209,17 +209,21 @@
         }
 
         function openEmailClientOrForm() {
+            // Создаем предварительно заполненные данные для письма
+            var subject = 'Тема вашего письма';
+            var body = 'Текст вашего сообщения';
+            
+            // Формируем ссылку с предварительно заполненными данными
+            var mailtoLink = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            
             // Проверяем, находится ли пользователь на мобильном устройстве
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
-            // Адрес электронной почты
-            var emailAddress = 'адрес_почты@example.com';
-            
             if (isMobile) {
                 // Открываем почтовый клиент на мобильных устройствах
-                window.location.href = 'mailto:' + emailAddress;
+                window.location.href = mailtoLink;
             } else {
-                // Открываем форму отправки почты на ПК
-                window.open('https://example.com/contact-form', '_blank');
+                // Открываем веб-версию Gmail с предварительно заполненными данными в новой вкладке
+                window.open('https://mail.google.com/?view=cm&fs=1&to=&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body), '_blank');
             }
         }
