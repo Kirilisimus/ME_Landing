@@ -203,9 +203,12 @@
           card.style.setProperty('--ty', '0');
         });
 
-        function shareOnTelegram(text) {
-            var telegramUrl = 'https://t.me/share/url?text=' + encodeURIComponent(text);
-            window.open(telegramUrl, '_blank');
+        function openTelegramWebAppWithText(text) {
+            var telegramUrl = 'https://web.telegram.org/#/im';
+            var encodedText = encodeURIComponent(text);
+            var encodedUrl = encodeURIComponent(telegramUrl);
+            var finalUrl = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText}`;
+            window.open(finalUrl, '_blank');
         }
 
         function openEmailClientOrForm() {
